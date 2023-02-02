@@ -9,6 +9,8 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 // This import is used to display notifications back to the user
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+import { Router } from '@angular/router';
+
 @Component({
     selector: 'app-user-signin-form',
     templateUrl: './user-signin-form.component.html',
@@ -21,7 +23,8 @@ export class UserSignInFormComponent implements OnInit {
     constructor(
         public fetchApiData: FetchApiDataService,
         public dialogRef: MatDialogRef<UserSignInFormComponent>,
-        public snackBar: MatSnackBar
+        public snackBar: MatSnackBar,
+        private router: Router,
     ) { }
 
     ngOnInit(): void {
@@ -32,12 +35,17 @@ export class UserSignInFormComponent implements OnInit {
         this.fetchApiData.userSignIn(this.userData).subscribe((result) => {
             // Logic for a successful user sign in goes here! (To be implemented)
             this.dialogRef.close(); // This will close the modal on success!
+
             // Save token to local storage
             localStorage.setItem('token', result.token);
             // Remove password from user object, and save remaining user object to local storage
             const {Password, ...cleanUser} = result.user;
             localStorage.setItem('user', JSON.stringify(cleanUser));
+
             console.log(result);
+            // Route to movies page
+            this.router.navigate(['movies']);
+            
             this.snackBar.open(result, 'OK', {
                 duration: 2000
             });
