@@ -2,7 +2,7 @@
     <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto;">
         <mat-card-header>
             <mat-card-title>{{movie.Title}}</mat-card-title>
-            <mat-card-subtitle>Directed by: {{movie.Director.Name}}</mat-card-subtitle>
+            <mat-card-subtitle>Directed by: <span *ngFor="let director of movie.Director">{{director.Name}}</span></mat-card-subtitle>
         </mat-card-header>
         <img src={{movie.ImageURL}} alt={{movie.Title}} style="width: 200px;" />
         <mat-card-actions>
