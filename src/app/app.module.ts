@@ -17,12 +17,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 // Componenents
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { UserSignInFormComponent } from './user-signin-form/user-signin-form.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -36,7 +38,8 @@ const appRoutes: Routes = [
     UserRegistrationFormComponent,
     UserSignInFormComponent,
     MovieCardComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    NavigationBarComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,7 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatDialogModule,
     MatSnackBarModule,
+    MatToolbarModule,
     MatIconModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),

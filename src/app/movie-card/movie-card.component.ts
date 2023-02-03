@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
+import { NavigationBarComponent } from '../navigation-bar/navigation-bar.component';
 
 @Component({
     selector: 'app-movie-card',
