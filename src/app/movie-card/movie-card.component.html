@@ -1,6 +1,6 @@
 <app-navigation-bar></app-navigation-bar>
-<div style="display: flex;">
-    <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto;">
+<div class="movie-cards-container" style="display: flex;">
+    <mat-card class="movie-card" *ngFor="let movie of movies;" style="flex: 1 1 auto;">
         <mat-card-header>
             <mat-card-title>{{movie.Title}}</mat-card-title>
             <mat-card-subtitle>Directed by: <span *ngFor="let director of movie.Director">{{director.Name}}</span></mat-card-subtitle>

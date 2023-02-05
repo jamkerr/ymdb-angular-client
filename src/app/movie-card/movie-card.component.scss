@@ -1,0 +1,10 @@
+.movie-cards-container {
+    flex-wrap: wrap;
+}
+
+.movie-card {
+    margin: 10px;
+    max-width: 250px;
+    align-items: center;
+    justify-content: space-between;
+}
