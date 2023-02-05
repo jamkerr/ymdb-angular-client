@@ -10,8 +10,12 @@
             <button mat-button color="primary">
                 Genre
             </button>
-            <button mat-button color="primary">
-                Director
+            <button
+                mat-button
+                color="primary"
+                *ngFor="let director of movie.Director"
+                (click)="openDirectorDialog(director)">
+                {{director.Name}}
             </button>
             <button mat-button color="primary">
                 Synopsis
