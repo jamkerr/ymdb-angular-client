@@ -15,7 +15,7 @@
         </button>
         <img src={{movie.ImageURL}} alt={{movie.Title}} style="width: 200px;" />
         <mat-card-actions>
-            <button mat-button color="primary">
+            <button mat-flat-button color="primary" (click)="openMovieDialog(movie)">
                 Synopsis
             </button>
             <mat-icon>favorite_border</mat-icon>
