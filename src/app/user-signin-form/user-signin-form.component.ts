@@ -42,7 +42,6 @@ export class UserSignInFormComponent implements OnInit {
             const {Password, ...cleanUser} = result.user;
             localStorage.setItem('user', JSON.stringify(cleanUser));
 
-            console.log(result);
             // Route to movies page
             this.router.navigate(['movies']);
             
