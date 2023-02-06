@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
-import { NavigationBarComponent } from '../navigation-bar/navigation-bar.component';
 import { DirectorDetailsComponent } from '../director-details/director-details.component';
 import { MatDialog } from '@angular/material/dialog';
 
