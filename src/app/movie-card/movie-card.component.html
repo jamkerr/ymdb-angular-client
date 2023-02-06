@@ -4,20 +4,17 @@
         <mat-card-header>
             <mat-card-title>{{movie.Title}}</mat-card-title>
             <mat-card-subtitle>Directed by:
-                <button mat-button color="accent" *ngFor="let director of movie.Director" (click)="openDirectorDialog(director)">
+                <button mat-button color="primary" *ngFor="let director of movie.Director" (click)="openDirectorDialog(director)">
                     {{director.Name}}
                 </button>
                 <!-- <span *ngFor="let director of movie.Director">{{director.Name}}</span> -->
             </mat-card-subtitle>
         </mat-card-header>
+        <button mat-stroked-button color="primary" *ngFor="let genre of movie.Genre" (click)="openGenreDialog(genre)">
+            {{genre.Name}}
+        </button>
         <img src={{movie.ImageURL}} alt={{movie.Title}} style="width: 200px;" />
         <mat-card-actions>
-            <button
-                mat-button
-                color="primary"
-                *ngFor="let genre of movie.Genre">
-                {{genre.Name}}
-            </button>
             <button mat-button color="primary">
                 Synopsis
             </button>

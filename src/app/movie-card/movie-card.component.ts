@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { DirectorDetailsComponent } from '../director-details/director-details.component';
 import { MatDialog } from '@angular/material/dialog';
+import { GenreDetailsComponent } from '../genre-details/genre-details.component';
 
 @Component({
     selector: 'app-movie-card',
@@ -38,4 +39,16 @@ export class MovieCardComponent implements OnInit {
             width: '280px'
         });
     }
+    
+    // Function to open genre details dialog
+    openGenreDialog(genre: any): void {
+        this.dialog.open(GenreDetailsComponent, {
+            data: {
+                Name: genre.Name,
+                Description: genre.Description
+            },
+            width: '280px'
+        });
+    }
+
 }
