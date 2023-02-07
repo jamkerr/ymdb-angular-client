@@ -27,7 +27,6 @@ export class FetchApiDataService {
 
     // User sign in
     public userSignIn(userDetails: any): Observable<any> {
-        console.log(userDetails);
         return this.http.post(apiUrl + 'login', userDetails)
         .pipe(
             catchError(this.handleError)
@@ -135,6 +134,7 @@ export class FetchApiDataService {
     public addFavoriteMovie(userName: string, movieTitle: string): Observable<any> {
         const token = localStorage.getItem('token');
         return this.http.put(apiUrl + 'users/' + userName + '/favorites/' + movieTitle,
+        {},
             {headers: new HttpHeaders(
                 {
                     Authorization: 'Bearer ' + token,

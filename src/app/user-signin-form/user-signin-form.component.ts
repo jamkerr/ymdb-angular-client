@@ -45,7 +45,7 @@ export class UserSignInFormComponent implements OnInit {
             // Route to movies page
             this.router.navigate(['movies']);
             
-            this.snackBar.open(result, 'OK', {
+            this.snackBar.open(`Welcome, ${result.user.Username}!`, 'OK', {
                 duration: 2000
             });
         }, (result) => {
