@@ -3,6 +3,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 // This import is used to display notifications back to the user
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+
 
 @Component({
     selector: 'app-profile-view',
@@ -22,7 +24,8 @@ export class ProfileViewComponent implements OnInit {
 
     constructor(
         public fetchApiData: FetchApiDataService,
-        public snackBar: MatSnackBar
+        public snackBar: MatSnackBar,
+        public router: Router
     ) { }
 
     ngOnInit(): void {
@@ -75,5 +78,19 @@ export class ProfileViewComponent implements OnInit {
                 duration: 4000
             });
         });
+    }
+
+    onDeleteAccount(): void {
+        if (confirm('Are you sure you want to delete your account? This action can\'t be undone.')) {
+            this.router.navigate(['welcome']).then(() => {
+                this.fetchApiData.deleteUser(this.user.Username).subscribe((res) => {
+                    console.log(res);
+                });
+                this.snackBar.open('Account deleted.', 'OK', {
+                    duration: 3000,
+                });
+                localStorage.clear();
+            });
+        }
     }
 }
