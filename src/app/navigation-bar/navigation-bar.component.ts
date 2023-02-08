@@ -16,6 +16,14 @@ export class NavigationBarComponent {
 
     username = JSON.parse(localStorage.getItem('user') || '').Username;
 
+    navigateMovies(): void {
+        this.router.navigate(['movies']);
+    }
+
+    navigateProfile(): void {
+        this.router.navigate(['profile']);
+    }
+
     onLogout(): void {
         localStorage.removeItem('user');
         localStorage.removeItem('token');
