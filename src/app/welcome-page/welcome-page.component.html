@@ -1,11 +1,18 @@
 <div class="main-page">
-    <h1>
-        Welcome to YMDB!
-    </h1>
-    <button mat-raised-button (click)="openUserRegistrationDialog()" style="margin-right: 10px;" color="primary">
-        Sign Up
-    </button>
-    <button mat-raised-button (click)="openUserSignInDialog()" color="primary">
-        Sign In
-    </button>
+    <mat-card class="welcome-card">
+        <mat-card-header>
+            <mat-card-title>Welcome to YMDB!</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-tab-group>
+                <mat-tab label="Sign In">
+                    <app-user-signin-form></app-user-signin-form>
+                </mat-tab>
+                <mat-tab label="Sign Up">
+                    <app-user-registration-form></app-user-registration-form>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card-content>
+    </mat-card>
+
 </div>

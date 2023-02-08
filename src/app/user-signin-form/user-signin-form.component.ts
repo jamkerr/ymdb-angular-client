@@ -22,7 +22,6 @@ export class UserSignInFormComponent implements OnInit {
 
     constructor(
         public fetchApiData: FetchApiDataService,
-        public dialogRef: MatDialogRef<UserSignInFormComponent>,
         public snackBar: MatSnackBar,
         private router: Router,
     ) { }
@@ -33,8 +32,6 @@ export class UserSignInFormComponent implements OnInit {
     // This is the function responsible for sending the form inputs to the backend
     signInUser(): void {
         this.fetchApiData.userSignIn(this.userData).subscribe((result) => {
-            // Logic for a successful user sign in goes here! (To be implemented)
-            this.dialogRef.close(); // This will close the modal on success!
 
             // Save token to local storage
             localStorage.setItem('token', result.token);
