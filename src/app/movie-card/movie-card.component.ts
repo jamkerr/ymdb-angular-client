@@ -13,7 +13,9 @@ import { MovieDetailsComponent } from '../movie-details/movie-details.component'
 })
 export class MovieCardComponent implements OnInit {
     movies: any[] = [];
+    allMovies: any[] = [];
     user: any = JSON.parse(localStorage.getItem('user') || '') || {};
+    filterToggle: boolean = false;
     constructor(
         public fetchApiData: FetchApiDataService,
         public dialog: MatDialog,
@@ -28,12 +30,17 @@ export class MovieCardComponent implements OnInit {
     getMovies(): void {
         this.fetchApiData.getAllMovies().subscribe((resp: any) => {
             this.movies = resp;
+            this.allMovies = resp;
             return this.movies;
         });
     }
 
     getUser(): void {
         this.user = JSON.parse(localStorage.getItem('user') || '');
+    }
+
+    onFilterToggleChange(): void {
+        this.movies = this.filterToggle ? this.movies.filter(movie => this.user.FavoriteMovies.includes(movie._id)) : this.allMovies;
     }
 
     // This is the function that will open the dialog when the director button is clicked  

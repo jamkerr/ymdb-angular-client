@@ -1,4 +1,5 @@
 <app-navigation-bar></app-navigation-bar>
+<mat-slide-toggle class="favorites-list-toggle" [(ngModel)]="filterToggle" (change)="onFilterToggleChange()">My favorites</mat-slide-toggle>
 <div class="movie-cards-container" style="display: flex;">
     <mat-card class="movie-card" *ngFor="let movie of movies;" style="flex: 1 1 auto;">
         <mat-card-header>

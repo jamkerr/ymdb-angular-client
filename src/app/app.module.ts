@@ -18,6 +18,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle'; 
 
 // Componenents
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
@@ -60,6 +61,7 @@ const appRoutes: Routes = [
     MatSnackBarModule,
     MatToolbarModule,
     MatIconModule,
+    MatSlideToggleModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
   ],
