@@ -70,7 +70,10 @@ export class ProfileViewComponent implements OnInit {
             });
             window.location.reload();
         }, (res) => {
-                console.log(res)
+            console.log(res)
+            this.snackBar.open(res.message, 'OK', {
+                duration: 4000
+            });
         });
     }
 }

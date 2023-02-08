@@ -206,12 +206,15 @@ export class FetchApiDataService {
     private handleError(error: HttpErrorResponse): any {
         if (error.error instanceof ErrorEvent) {
             console.error('Some error occurred:', error.error.message);
-        } else {
+            return throwError(() => new Error(error.error.message));
+        } else if (error.error.errors) {
             console.error(
                 `Error Status code ${error.status}, ` +
                 `Error body is: ${JSON.stringify(error.error)}`
             );
-        }
+            return throwError(() => new Error(error.error.errors[0].msg));
+        } else {
         return throwError(() => new Error('Something bad happened; please try again later.'));
+        }
     }
 }
