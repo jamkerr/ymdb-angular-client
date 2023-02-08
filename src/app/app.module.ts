@@ -29,10 +29,12 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { DirectorDetailsComponent } from './director-details/director-details.component';
 import { GenreDetailsComponent } from './genre-details/genre-details.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { ProfileViewComponent } from './profile-view/profile-view.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
+  { path: 'profile', component: ProfileViewComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 
@@ -46,7 +48,8 @@ const appRoutes: Routes = [
     NavigationBarComponent,
     DirectorDetailsComponent,
     GenreDetailsComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    ProfileViewComponent
   ],
   imports: [
     BrowserModule,
