@@ -29,8 +29,10 @@
         </mat-card>
     </mat-tab>
     <mat-tab label="DELETE ACCOUNT">
-        <button mat-flat-button class="delete-account-button" color="warn" (click)="onDeleteAccount()">
-            DELETE ACCOUNT
-        </button>
+        <div class="delete-button-wrapper">
+            <button mat-flat-button class="delete-account-button" color="warn" (click)="onDeleteAccount()">
+                DELETE ACCOUNT
+            </button>
+        </div>
     </mat-tab>
 </mat-tab-group>
