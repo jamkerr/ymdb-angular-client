@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserSigninFormComponent } from './user-signin-form.component';
+import { UserSignInFormComponent } from './user-signin-form.component';
 
-describe('UserSigninFormComponent', () => {
-  let component: UserSigninFormComponent;
-  let fixture: ComponentFixture<UserSigninFormComponent>;
+describe('UserSignInFormComponent', () => {
+  let component: UserSignInFormComponent;
+  let fixture: ComponentFixture<UserSignInFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserSigninFormComponent ]
+      declarations: [ UserSignInFormComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(UserSigninFormComponent);
+    fixture = TestBed.createComponent(UserSignInFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
