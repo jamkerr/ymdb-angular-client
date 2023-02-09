@@ -10,6 +10,16 @@
     justify-content: space-between;
 }
 
+mat-card-header {
+    width: 90%;
+    background-color: #212121;
+    min-height: 125px;
+}
+
+.genre-button {
+    margin: 5px;
+}
+
 .favorites-list-toggle {
     margin: 10px;
 }

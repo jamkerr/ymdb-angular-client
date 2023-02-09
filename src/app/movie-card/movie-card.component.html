@@ -1,25 +1,24 @@
 <app-navigation-bar></app-navigation-bar>
-<mat-slide-toggle class="favorites-list-toggle" [(ngModel)]="filterToggle" (change)="onFilterToggleChange()">My favorites</mat-slide-toggle>
+<mat-slide-toggle class="favorites-list-toggle" [(ngModel)]="filterToggle" (change)="onFilterToggleChange()">My Favorites</mat-slide-toggle>
 <div class="movie-cards-container" style="display: flex;">
-    <mat-card class="movie-card" *ngFor="let movie of movies;" style="flex: 1 1 auto;">
+    <mat-card class="movie-card" *ngFor="let movie of movies;">
         <mat-card-header>
-            <mat-card-title>{{movie.Title}}</mat-card-title>
+            <mat-card-title>{{movie.Title | uppercase}}</mat-card-title>
             <mat-card-subtitle>Directed by:
                 <button mat-button color="primary" *ngFor="let director of movie.Director" (click)="openDirectorDialog(director)">
-                    {{director.Name}}
+                    {{director.Name | uppercase}}
                 </button>
-                <!-- <span *ngFor="let director of movie.Director">{{director.Name}}</span> -->
             </mat-card-subtitle>
         </mat-card-header>
-        <button mat-stroked-button color="primary" *ngFor="let genre of movie.Genre" (click)="openGenreDialog(genre)">
-            {{genre.Name}}
+        <button mat-button class="genre-button" color="primary" *ngFor="let genre of movie.Genre" (click)="openGenreDialog(genre)">
+            {{genre.Name | uppercase}}
         </button>
         <img src={{movie.ImageURL}} alt={{movie.Title}} style="width: 200px;" />
         <mat-card-actions>
-            <button mat-flat-button color="primary" (click)="openMovieDialog(movie)">
-                Synopsis
+            <button mat-button color="primary" (click)="openMovieDialog(movie)">
+                SYNOPSIS
             </button>
-            <button mat-icon-button (click)="favoriteMovieToggle(movie)">
+            <button mat-mini-fab (click)="favoriteMovieToggle(movie)">
                 <mat-icon>
                     {{user.FavoriteMovies.includes(movie._id) ? 'favorite' : 'favorite_border'}}
                 </mat-icon>

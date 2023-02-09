@@ -1,13 +1,13 @@
 <mat-card class="director-card" style="flex: 1 1 auto;">
-    <mat-card-header>
+    <mat-card-header class="dark-card-header">
         <mat-card-title>
-            {{data.Name}}
+            {{data.Name | uppercase}}
         </mat-card-title>
         <mat-card-subtitle>
-            Born {{data.Birthyear}}
+            Born {{data.Birthyear | date:'yyyy'}}
         </mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content>
+    <mat-card-content class="card-content-text">
         {{data.Bio}}
     </mat-card-content>
 </mat-card>
