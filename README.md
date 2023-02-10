@@ -10,6 +10,10 @@ After creating an account and signing in, you can explore movie data and add any
 
 Try [the live app](https://jamkerr.github.io/ymdb-angular-client) out for yourself!
 
+## Screenshot
+
+![A screenshot of a user's favorite movies](./src/assets/screenshot-my-favorites.png)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
